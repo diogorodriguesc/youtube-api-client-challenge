@@ -1,0 +1,16 @@
+version: '2'
+services:
+  php:
+    build: php-fpm
+    ports:
+      - '9002:9000'
+    volumes:
+      - ../app:/var/www/symfony:cached
+  nginx:
+    build: nginx
+    ports:
+      - '8080:80'
+    links:
+      - php
+    volumes_from:
+      - php
