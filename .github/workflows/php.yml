@@ -28,7 +28,6 @@ jobs:
 
     - name: Install dependencies and Run tests
       id: composer-install-dependencies
-      if: steps.composer-cache.outputs.cache-hit != 'true'
       run: |
         cd app && composer install --prefer-dist --no-progress --no-suggest
         cd app && vendor/bin/phpunit tests/Unit
