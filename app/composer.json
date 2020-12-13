@@ -1,5 +1,6 @@
 {
     "type": "project",
+    "name": "diogorodriguesc/youtube-api-client-challenge",
     "description": "Tech Challenge Youtube API Client",
     "license": "proprietary",
     "minimum-stability": "dev",
