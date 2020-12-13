@@ -29,3 +29,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    app.your_controller:
+        class: App\Controller\GetYoutubeVideosController
+        arguments:
+            - '@tactician.commandbus'
+
+    foo.use_case.get_youtube_videos_query_handler:
+        class: App\UseCase\Query\GetYoutubeVideos\QueryHandler
+        tags:
+            - { name: tactician.handler, typehints: true }
