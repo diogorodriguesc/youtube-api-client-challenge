@@ -32,7 +32,8 @@
 
 ### Install new dependencies through composer:
 
-`docker-compose run php composer require dependency-owner/dependency-name`
+1. `cd docker` 
+2. `docker-compose run php composer require dependency-owner/dependency-name`
 
 ### Contributors:
     - Diogo Correia (diogorodriguescorreia89@gmail.com)
