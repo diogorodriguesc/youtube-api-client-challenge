@@ -26,14 +26,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    - name: Install dependencies
+    - name: Install dependencies and Run tests
       id: composer-install-dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
-      run: cd app && composer install --prefer-dist --no-progress --no-suggest
-
-    - name: Run Unit Tests
-      needs: [composer-cache, composer-install-dependencies]
-      run: cd app && vendor/bin/phpunit tests/Unit
+      run: |
+        cd app && composer install --prefer-dist --no-progress --no-suggest
+        cd app && vendor/bin/phpunit tests/Unit
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
