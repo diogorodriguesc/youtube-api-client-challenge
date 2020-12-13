@@ -18,7 +18,7 @@ jobs:
       run: cd app && composer validate
 
     - name: Cache Composer packages
-      id: composer-cache
+      id:
       uses: actions/cache@v2
       with:
         path: vendor
@@ -27,10 +27,12 @@ jobs:
           ${{ runner.os }}-php-
 
     - name: Install dependencies
+      id: composer-install-dependencies
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: cd app && composer install --prefer-dist --no-progress --no-suggest
 
     - name: Run Unit Tests
+      needs: [composer-cache, composer-install-dependencies]
       run: cd app && vendor/bin/phpunit tests/Unit
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
