@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\UseCase\Query\GetYoutubeVideos\Query;
-use FOS\RestBundle\Controller\AbstractFOSRestController;
+use App\UseCase\Query\GetYoutubeVideos\DTO\Videos;
 use League\Tactician\CommandBus;
 
 class GetYoutubeVideosController

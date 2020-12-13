@@ -1,7 +1,3 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
-
 youtube_list:
   path: /videos/{searchValue}
   controller: App\Controller\GetYoutubeVideosController::getYoutubeVideos

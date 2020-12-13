@@ -24,6 +24,10 @@
 3. Execute: `docker-compose build`
 4. Execute: `docker-compose up -d`
 5. Open Browser and access link: `http://127.0.0.1:8080`
+6. Create a file `.env.local` with the following content:
+
+        GOOGLE_API_ACCESS_TOKEN={YOUR_GOOGLE_API_ACCESS_TOKEN}
+        GOOGLE_API_KEY={YOUR_GOOGLE_API_KEY}
 
 ### Access Containers:
 
