@@ -24,6 +24,10 @@ final class VideosSearchProvider implements SearchProviderInterface
             [
                 'query' => [
                     'q' => $query,
+                    'part' => [
+                        'snippet',
+                        'id'
+                    ]
                 ]
             ]
         );
@@ -32,11 +36,16 @@ final class VideosSearchProvider implements SearchProviderInterface
         $content = $response->getContent();
 
         foreach ($content->items as $item) {
+            if ($item->id->kind != 'youtube#video') {
+                continue;
+            }
+
             $snippet = $item->snippet;
             $results[] = [
-                'title' => $snippet->title,
-                'description' => $snippet->description,
-                'published_at' => $snippet->publishedAt,
+                'id'            => $item->id->videoId,
+                'title'         => $snippet->title,
+                'description'   => $snippet->description,
+                'published_at'  => $snippet->publishedAt,
             ];
         }
 

@@ -26,8 +26,9 @@
 5. Open Browser and access link: `http://127.0.0.1:8080`
 6. Create a file `.env.local` with the following content:
 
-        GOOGLE_API_ACCESS_TOKEN={YOUR_GOOGLE_API_ACCESS_TOKEN}
         GOOGLE_API_KEY={YOUR_GOOGLE_API_KEY}
+        GOOGLE_CLIENT_ID={YOUR_GOOGLE_CLIENT_ID}
+        GOOGLE_CLIENT_SECRET={YOUR_GOOGLE_CLIENT_SECRET}
 
 ### Access Containers:
 

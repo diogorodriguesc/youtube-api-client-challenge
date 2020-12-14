@@ -30,10 +30,17 @@ services:
         tags:
             - { name: tactician.handler, typehints: true }
 
+    App\Service\Google\OauthAuthenticator:
+        arguments:
+            - '@http_client'
+            - '@cache.app'
+            - '%google_client_id%'
+            - '%google_client_secret%'
+
     App\Service\Youtube\GoogleApiClient:
         arguments:
             - '@http_client'
-            - '%google_api_access_token%'
+            - '@App\Service\Google\OauthAuthenticator'
             - '%google_api_key%'
 
     App\Service\Youtube\VideoSearchProvider:
