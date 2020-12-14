@@ -1,6 +1,6 @@
-## Tech Challenge
+## Youtube API Client Challenge
 
-###Challenge's Description:
+### Challenge's Description
 
     Build an MVC application using PHP and a popular framework which will use the YouTube API on the server side to return a list of YouTube search results by an ajax call.
 
@@ -15,14 +15,30 @@
         We want to see how you handle the request and the response
         There are many many ways to complete this challenge, but the more you can show off your PHP skills the better.
 
+## How-TOS
 
-###How-to Install:
+### Install application:
 
 1. Open terminal.
 2. Go to docker folder. `cd /docker`
 3. Execute: `docker-compose build`
 4. Execute: `docker-compose up -d`
 5. Open Browser and access link: `http://127.0.0.1:8080`
+6. Create a file `.env.local` with the following content:
 
-###Contributors:
+        GOOGLE_API_KEY={YOUR_GOOGLE_API_KEY}
+        GOOGLE_CLIENT_ID={YOUR_GOOGLE_CLIENT_ID}
+        GOOGLE_CLIENT_SECRET={YOUR_GOOGLE_CLIENT_SECRET}
+
+### Access Containers:
+
+- Nginx: `docker exec -it docker_nginx_1 bash`
+- PHP: `docker exec -it docker_php_1 bash`
+
+### Install new dependencies through composer:
+
+1. `cd docker` 
+2. `docker-compose run php composer require dependency-owner/dependency-name`
+
+### Contributors:
     - Diogo Correia (diogorodriguescorreia89@gmail.com)
